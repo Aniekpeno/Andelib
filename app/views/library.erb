@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='' name='description'>
+    <meta content='Anthony Eyo' name='author'>
+    <title>Library</title>
+    <link href='images/gt_favicon.png' rel='shortcut icon'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' media='screen' rel='stylesheet'>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/font-awesome.min.css' rel='stylesheet'>
+    <!-- Custom styles for our template -->
+    <link href='css/bootstrap-theme.css' media='screen' rel='stylesheet'>
+    <link href='css/main.css' rel='stylesheet'>
+    <link href='css/demo-styles.css' rel='stylesheet'>
+    <link href='css/styles.css' rel='stylesheet'>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class='navbar navbar-inverse navbar-fixed-top headroom'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <!-- Button for smallest screens -->
+          <button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='navbar-brand' href='/'>
+            <img alt='Progressus HTML5 template' src='images/logo.png'>
+          </a>
+        </div>
+        <div class='navbar-collapse collapse'>
+          <ul class='nav navbar-nav pull-right'>
+            <li>
+              <a href='/'>Home</a>
+            </li>
+            <li class='active'>
+              <a href='library'>Library</a>
+            </li>
+            <li>
+              <% if session[:name] != nil %>
+              <a href='rent'>Request A Book</a>
+              <% else %>
+              <a href='signin'>Request A Book</a>
+              <% end %>
+            </li>
+            <li>
+              <% if session[:name] != nil %>
+              <a class='btn' href='/logout'>LOGOUT</a>
+              <% else %>
+              <a class='btn' href='signin'>SIGN IN / SIGN UP</a>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+        <!-- /.nav-collapse -->
+      </div>
+    </div>
+    <!-- /.navbar -->
+    <header class='secondary' id='head'></header>
+    <!-- container -->
+    <div class='container'>
+      <ol class='breadcrumb'>
+        <li>
+          <a href='#'>Welcome <%= session[:name] %></a>
+        </li>
+        
+      </ol>
+      <div class='row'></div>
+      <div id='gallery-container'>
+        <ul class='items--small'>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-1.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-2.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-3.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-4.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-5.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-6.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-7.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-8.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-9.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-10.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-11.png'>
+            </a>
+          </li>
+          <li class='item'>
+            <a href='#'>
+              <img alt='' src='images/small-12.png'>
+            </a>
+          </li>
+        </ul>
+        <ul class='items--big'>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-1.jpg'>
+                <figcaption class='img-caption'>
+                  Bird Watching: A boy with a passion for bird watching discovers freedom!!!
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-2.jpg'>
+                <figcaption class='img-caption'>
+                  Motherly: A book on love and family.
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-3.jpg'>
+                <figcaption class='img-caption'>
+                  Boy Meets Chicken: Meet Verem the chicken whisperer.
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-4.jpg'>
+                <figcaption class='img-caption'>
+                  The Waterway Walk: Take a walk with Grandman Chan into life's mysteryies
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-5.jpg'>
+                <figcaption class='img-caption'>
+                  Country side GOONS: Kayode, Innocent & Ore explores life in d countryside.
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-6.jpg'>
+                <figcaption class='img-caption'>
+                  Hip Hop: Three little ones out to have fun
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-7.jpg'>
+                <figcaption class='img-caption'>
+                  We Made It: discover the thrill of conquest
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-8.jpg'>
+                <figcaption class='img-caption'>
+                  Shield UP: Find out how to prevent Andela from tearing u apart
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-9.jpg'>
+                <figcaption class='img-caption'>
+                  Silly Muffin: Silly indeed, crazy Daisi has no limit to his being silly
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-10.jpg'>
+                <figcaption class='img-caption'>
+                  The Long Walk Home: a true story on perseverance through bootcamp
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-11.jpg'>
+                <figcaption class='img-caption'>
+                  6 Strings: All about the union between Life and Music
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li class='item--big'>
+            <a href='#'>
+              <figure>
+                <img alt='' src='images/big-12.jpg'>
+                <figcaption class='img-caption'>
+                  Giggles: Giggly Giggly Giggly... all the way.
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        </ul>
+        <div class='controls'>
+          <span class='control icon-arrow-left' data-direction='previous'></span>
+          <span class='control icon-arrow-right' data-direction='next'></span>
+        </div>
+      </div>
+      <p class='credit'>
+        Photographs © of
+        <a href='#'>Variours Book Authors</a>
+      </p>
+      <p class='tips'>You can use the arrow keys to navigate between images in the slideshow view. P.S: Note the name of the book for rent sake.</p>
+      <div style='text-align: center'>
+        <% if session[:name] != nil %>
+              <a class='button' href='rent'>Request a book today</a>
+              <% else %>
+              <a class='button' href='signin'>Request a book today</a>
+              <% end %>
+      <a class='button' href='library'>Back to library grid</a>
+    </div>
+    </div>
+    <!-- /container -->
+    <footer class='top-space' id='footer'>
+      <div class='footer1'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-3 widget'>
+              <h3 class='widget-title'>Contact</h3>
+              <div class='widget-body'>
+                <p>
+                  +234 80 67010318
+                  <br>
+                  <a href='mailto:#'>anthonyeyo007@gmail.com</a>
+                  <br>
+                  <br>
+                  265 Adeola Odeku Street, Victoria island, Lagos.
+                </p>
+              </div>
+            </div>
+            <div class='col-md-3 widget'>
+              <h3 class='widget-title'>Follow Andelib</h3>
+              <div class='widget-body'>
+                <p class='follow-me-icons'>
+                  <a href=''>
+                    <i class='fa fa-twitter fa-2'></i>
+                  </a>
+                  <a href=''>
+                    <i class='fa fa-dribbble fa-2'></i>
+                  </a>
+                  <a href=''>
+                    <i class='fa fa-github fa-2'></i>
+                  </a>
+                  <a href=''>
+                    <i class='fa fa-facebook fa-2'></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class='col-md-6 widget'>
+              <h3 class='widget-title'>About Andelib</h3>
+              <div class='widget-body'>
+                <p>Okay you got me, Andelib is just a library project, nothing more, but yet it could grow into something BIG, who knows...</p>
+                <p>Well I guess I'd like to use this medium to say thanks to all the friends and enemies I made while going through Andela Bootcamp VIII, your guys will forever be in my heart.</p>
+              </div>
+            </div>
+          </div>
+          <!-- /row of widgets -->
+        </div>
+      </div>
+      <div class='footer2'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-6 widget'>
+              <div class='widget-body'>
+                <p class='simplenav'>
+                  <a href='#'>Home</a>
+                  |
+                  <a href='library'>Library</a>
+                  |
+                  <a href='rent'>Request A Book</a>
+                  |
+                  <b>
+                    <a href='signup'>Sign up</a>
+                  </b>
+                </p>
+              </div>
+            </div>
+            <div class='col-md-6 widget'>
+              <div class='widget-body'>
+                <p class='text-right'>
+                  Copyright © 2015, Andelib. Designed by
+                  <a href='#' rel='designer'>Anthony Eyo</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- /row of widgets -->
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'></script>
+    <script src='js/headroom.min.js'></script>
+    <script src='js/jQuery.headroom.min.js'></script>
+    <script src='js/template.js'></script>
+    <script src='js/jquery-1.8.2.min.js'></script>
+    <script src='js/plugins.js'></script>
+    <script src='js/scripts.js'></script>
+    <script>
+      $(document).ready(function(){
+       $('#gallery-container').sGallery({
+          fullScreenEnabled: true
+        });
+      });
+    </script>
+  </body>
+</html>

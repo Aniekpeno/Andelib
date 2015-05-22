@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='' name='description'>
+    <meta content='Anthony Eyo' name='author'>
+    <title>Sign up</title>
+    <link href='images/gt_favicon.png' rel='shortcut icon'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' media='screen' rel='stylesheet'>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/font-awesome.min.css' rel='stylesheet'>
+    <!-- Custom styles for our template -->
+    <link href='css/bootstrap-theme.css' media='screen' rel='stylesheet'>
+    <link href='css/main.css' rel='stylesheet'>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class='navbar navbar-inverse navbar-fixed-top headroom'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <!-- Button for smallest screens -->
+          <button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='navbar-brand' href='/'>
+            <img alt='Progressus HTML5 template' src='images/logo.png'>
+          </a>
+        </div>
+        <div class='navbar-collapse collapse'>
+          <ul class='nav navbar-nav pull-right'>
+            <li>
+              <a href='/'>Home</a>
+            </li>
+            <li>
+              <a href='library'>Library</a>
+            </li>
+            <li>
+              <% if session[:name] != nil %>
+              <a href='rent'>Request A Book</a>
+              <% else %>
+              <a href='signin'>Request A Book</a>
+              <% end %>
+            </li>
+            <li>
+              <% if session[:name] != nil %>
+              <a class='btn' href='/logout'>LOGOUT</a>
+              <% else %>
+              <a class='btn' href='signin'>SIGN IN / SIGN UP</a>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+        <!-- /.nav-collapse -->
+      </div>
+    </div>
+    <!-- /.navbar -->
+    <header class='secondary' id='head'></header>
+    <!-- container -->
+    <div class='container'>
+      <ol class='breadcrumb'>
+        <li>
+          <a href='index'>Home</a>
+        </li>
+        <li class='active'>Registration</li>
+      </ol>
+      <div class='row'>
+        <!-- Article main content -->
+        <article class='col-xs-12 maincontent'>
+          <header class='page-header'>
+            <h1 class='page-title'>Registration</h1>
+          </header>
+          <div class='col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2'>
+            <div class='panel panel-default'>
+              <div class='panel-body'>
+                <h3 class='thin text-center'>Register a new account</h3>
+                <p class='text-center text-muted'>
+                  If you're already a member,
+                  <a href='signin'>Login</a>
+                  here. If not, not to worry, fill the form below and get plugged in.
+                </p>
+                <hr>
+                <form action='/signup' method='post'>
+                  <div class='top-margin'>
+                    <label>First Name</label>
+                    <span class='text-danger'>*</span>
+                    <input class='form-control' required='true' name='firstname' id='firstname'>
+                  </div>
+                  <div class='top-margin'>
+                    <label>Last Name</label>
+                    <span class='text-danger'>*</span>
+                    <input class='form-control' required='true' name='surname' id='surname'>
+                  </div>
+                  <div class='top-margin'>
+                    <label>
+                      Email Address
+                      <span class='text-danger'>*</span>
+                    </label>
+                    <input class='form-control' required='true' name='email' id='email'>
+                  </div>
+                  <div class='row top-margin'>
+                    <div class='col-sm-6'>
+                      <label>
+                        Password
+                        <span class='text-danger'>*</span>
+                      </label>
+                      <input class='form-control' required='true' type='password' name='password' id='password' equalTo='password'>
+                    </div>
+                    <div class='col-sm-6'>
+                      <label>
+                        Confirm Password
+                        <span class='text-danger'>*</span>
+                      </label>
+                      <input class='form-control' required='true' type='password'>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class='row'>
+                    <div class='col-lg-8'>
+                      <label class='checkbox'>
+                        <input type='checkbox' required='true'>
+                        I've read the
+                        <a href='#'>Terms and Conditions</a>
+                      </label>
+                    </div>
+                    <div class='col-lg-4 text-right'>
+                      <button class='btn btn-action' type='submit'>Register</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- /Article -->
+      </div>
+    </div>
+    <!-- /container -->
+    <footer class='top-space' id='footer'>
+      <div class='footer1'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-3 widget'>
+              <h3 class='widget-title'>Contact</h3>
+              <div class='widget-body'>
+                <p>
+                  +234 80 67010318
+                  <br>
+                  <a href='mailto:#'>anthonyeyo007@gmail.com</a>
+                  <br>
+                  <br>
+                  265 Adeola Odeku Street, Victoria island, Lagos.
+                </p>
+              </div>
+            </div>
+            <div class='col-md-3 widget'>
+              <h3 class='widget-title'>Follow Andelib</h3>
+              <div class='widget-body'>
+                <p class='follow-me-icons'>
+                  <a href=''>
+                    <i class='fa fa-twitter fa-2'></i>
+                  </a>
+                  <a href=''>
+                    <i class='fa fa-dribbble fa-2'></i>
+                  </a>
+                  <a href=''>
+                    <i class='fa fa-github fa-2'></i>
+                  </a>
+                  <a href=''>
+                    <i class='fa fa-facebook fa-2'></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class='col-md-6 widget'>
+              <h3 class='widget-title'>About Andelib</h3>
+              <div class='widget-body'>
+                <p>Okay you got me, Andelib is just a library project, nothing more, but yet it could grow into something BIG, who knows...</p>
+                <p>Well I guess I'd like to use this medium to say thanks to all the friends and enemies I made while going through Andela Bootcamp VIII, your guys will forever be in my heart.</p>
+              </div>
+            </div>
+          </div>
+          <!-- /row of widgets -->
+        </div>
+      </div>
+      <div class='footer2'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-6 widget'>
+              <div class='widget-body'>
+                <p class='simplenav'>
+                  <a href='#'>Home</a>
+                  |
+                  <a href='library'>Library</a>
+                  |
+                  <a href='rent'>Request A Book</a>
+                  |
+                  <b>
+                    <a href='signup'>Sign up</a>
+                  </b>
+                </p>
+              </div>
+            </div>
+            <div class='col-md-6 widget'>
+              <div class='widget-body'>
+                <p class='text-right'>
+                  Copyright © 2015, Andelib. Designed by
+                  <a href='#' rel='designer'>Anthony Eyo</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- /row of widgets -->
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'></script>
+    <script src='js/headroom.min.js'></script>
+    <script src='js/jQuery.headroom.min.js'></script>
+    <script src='js/template.js'></script>
+  </body>
+</html>

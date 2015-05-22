@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <meta content='' name='description'>
+    <meta content='Anthony Eyo' name='author'>
+    <title>Request Book</title>
+    <link href='images/gt_favicon.png' rel='shortcut icon'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' media='screen' rel='stylesheet'>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/font-awesome.min.css' rel='stylesheet'>
+    <!-- Custom styles -->
+    <link href='css/bootstrap-theme.css' media='screen' rel='stylesheet'>
+    <link href='css/main.css' rel='stylesheet'>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class='navbar navbar-inverse navbar-fixed-top headroom'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <!-- Button for smallest screens -->
+          <button class='navbar-toggle' data-target='.navbar-collapse' data-toggle='collapse' type='button'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='navbar-brand' href='/'>
+            <img alt='Progressus HTML5 template' src='images/logo.png'>
+          </a>
+        </div>
+        <div class='navbar-collapse collapse'>
+          <ul class='nav navbar-nav pull-right'>
+            <li>
+              <a href='/'>Home</a>
+            </li>
+            <li>
+              <a href='library'>Library</a>
+            </li>
+            <li class='active'>
+              <% if session[:name] != nil %>
+              <a href='rent'>Request A Book</a>
+              <% else %>
+              <a href='signin'>Request A Book</a>
+              <% end %>
+            </li>
+            <li>
+              <% if session[:name] != nil %>
+              <a class='btn' href='/logout'>LOGOUT</a>
+              <% else %>
+              <a class='btn' href='signin'>SIGN IN / SIGN UP</a>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+        <!-- /.nav-collapse -->
+      </div>
+    </div>
+    <!-- /.navbar -->
+    <header class='secondary' id='head'></header>
+    <!-- container -->
+    <div class='container'>
+      <ol class='breadcrumb'>
+        <li>
+          <a href='/'>Home</a>
+        </li>
+        <li class='active'><%= session[:name] %></li>
+      </ol>
+      <div class='row'>
+        <!-- Article main content -->
+        <article class='col-sm-9 maincontent'>
+          <header class='page-header'>
+            <h1 class='page-title'>Request A Book</h1>
+          </header>
+          <p>
+            Seen a book on our library you'd like to read, fill out the form below, with the title and in the message box, detailed descr of your address so we'd get the book to you. 
+          </p>
+          <br>
+          <form action='/rent' method='post'>
+            <div class='row'>
+              <div class='col-sm-4'>
+                <input required='true' class='form-control' placeholder='Full Name' type='text' id='name' name='name' value="<%= session[:name] %>">
+              </div>
+              <div class='col-sm-4'>
+                <select class='form-control' placeholder='Title of Book' type='text' id='title' name='title' required='true'>
+                  <option value=''>Select a Book</option>
+                  <% @books.each do |book| %>
+                  <option value='<%= book.id %>'><%= book.title %></option>
+                <% end %>
+                </select>
+              </div>
+              <div class='col-sm-4'>
+                <input  class='form-control' id="date" name="date" required='true'>
+              </div>
+            </div>
+            <br>
+            <div class='row'>
+              <div class='col-sm-12'>
+                <textarea class='form-control' placeholder='Give in-depth details about your location to prevent wrong delivery...' rows='9' name='description' id='description' required='true'></textarea>
+              </div>
+            </div>
+            <br>
+            <div class='row'>
+              <div class='col-sm-6'>
+                <label class='checkbox'>
+                  <input type='checkbox' required='true'>
+                  I agree to return book after ONE WEEK
+                </label>
+              </div>
+              <div class='col-sm-6 text-right'>
+                <input class='btn btn-action' type='submit' value='Send message'>
+              </div>
+            </div>
+          </form>
+        </article>
+        <!-- /Article -->
+        <!-- Sidebar -->
+        <aside class='col-sm-3 sidebar sidebar-right'>
+          <div class='widget'>
+            <h4>Address</h4>
+            <address>
+              265 Adeola Odeku Street, Victoria island, Lagos.
+            </address>
+            <h4>Phone:</h4>
+            <address>
+              +234 80 67010318
+            </address>
+          </div>
+        </aside>
+        <!-- /Sidebar -->
+      </div>
+    </div>
+    <!-- /container -->
+    <section class='container-full top-space'>
+      <div id='map'></div>
+    </section>
+    <footer id='footer'>
+      <div class='footer1'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-3 widget'>
+              <h3 class='widget-title'>Contact</h3>
+              <div class='widget-body'>
+                <p>
+                  +234 80 67010318
+                  <br>
+                  <a href='mailto:#'>anthonyeyo007@gmail.com</a>
+                  <br>
+                  <br>
+                  265 Adeola Odeku Street, Victoria island, Lagos.
+                </p>
+              </div>
+            </div>
+            <div class='col-md-3 widget'>
+              <h3 class='widget-title'>Follow Andelib</h3>
+              <div class='widget-body'>
+                <p class='follow-me-icons'>
+                  <a href=''>
+                    <i class='fa fa-twitter fa-2'></i>
+                  </a>
+                  <a href=''>
+                    <i class='fa fa-dribbble fa-2'></i>
+                  </a>
+                  <a href=''>
+                    <i class='fa fa-github fa-2'></i>
+                  </a>
+                  <a href=''>
+                    <i class='fa fa-facebook fa-2'></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class='col-md-6 widget'>
+              <h3 class='widget-title'>About Andelib</h3>
+              <div class='widget-body'>
+                <p>Okay you got me, Andelib is just a library project, nothing more, but yet it could grow into something BIG, who knows...</p>
+                <p>Well I guess I'd like to use this medium to say thanks to all the friends and enemies I made while going through Andela Bootcamp VIII, your guys will forever be in my heart.</p>
+              </div>
+            </div>
+          </div>
+          <!-- /row of widgets -->
+        </div>
+      </div>
+      <div class='footer2'>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-6 widget'>
+              <div class='widget-body'>
+                <p class='simplenav'>
+                  <a href='#'>Home</a>
+                  |
+                  <a href='about'>About</a>
+                  |
+                  <a href='library'>Contact</a>
+                  |
+                  <b>
+                    <a href='signup'>Sign up</a>
+                  </b>
+                </p>
+              </div>
+            </div>
+            <div class='col-md-6 widget'>
+              <div class='widget-body'>
+                <p class='text-right'>
+                  Copyright © 2015, Andelib. Designed by
+                  <a href='#' rel='designer'>Anthony Eyo</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- /row of widgets -->
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'></script>
+    <script src='js/headroom.min.js'></script>
+    <script src='js/jQuery.headroom.min.js'></script>
+    <script src='js/template.js'></script>
+    <script type="text/javascript">
+  document.getElementById('date').value = Date();
+</script>
+    <!-- Google Maps -->
+    <script src='https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false&amp;extension=.js'></script>
+    <script src='js/google-map.js'></script>
+  </body>
+</html>
