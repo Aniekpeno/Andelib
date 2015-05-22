@@ -25,6 +25,22 @@ GEM
     xpath (2.0.0)
       nokogiri (~> 1.3)
       shotgun (0.9.1)
+      data_objects (0.10.16)
+      shotgun (0.9.1)
+      sqlite3 (1.3.7)
+datamapper (1.2.0)
+dm-aggregates (1.2.0)
+dm-constraints (1.2.0)
+dm-core (1.2.1)
+dm-do-adapter (1.2.0)
+dm-migrations (1.2.0)
+dm-serializer (1.2.2)
+dm-sqlite-adapter (1.2.0)
+dm-timestamps (1.2.0)
+dm-transactions (1.2.0)
+dm-types (1.2.2)
+dm-validations (1.2.0)
+do_sqlite3 (0.10.16)
 
 PLATFORMS
   ruby
@@ -34,3 +50,5 @@ DEPENDENCIES
   minitest
   rack-test
   sinatra
+  data_mapper
+  dm-sqlite-adapter
